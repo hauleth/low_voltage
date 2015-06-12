@@ -5,8 +5,12 @@
 
 gem 'high_voltage', '2.3.0'
 
-after_initialize do
-  Discourse::Application.routes.append do
-    get '/pages/*id' => 'high_voltage/pages#show'
+module LowVoltage
+  class Engine < ::Rails::Engine
+    isolate_namespace LowVoltage
   end
+end
+
+Discourse::Application.routes.append do
+  mount ::LowVoltage::Engine, at: '/pages'
 end
