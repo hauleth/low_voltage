@@ -1,1 +1,1 @@
-require_relative 'low_voltage/engine'
+require File.expand_path('../low_voltage/engine', __FILE__)

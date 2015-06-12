@@ -5,7 +5,7 @@
 
 gem 'high_voltage', '2.3.0'
 
-require_relative 'lib/low_voltage'
+load File.expand('../lib/low_voltage.rb', __FILE__)
 
 Discourse::Application.routes.append do
   mount ::LowVoltage::Engine, at: '/pages'
