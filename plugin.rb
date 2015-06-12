@@ -10,3 +10,7 @@ load File.expand_path('../lib/low_voltage.rb', __FILE__)
 Discourse::Application.routes.append do
   mount ::LowVoltage::Engine, at: '/pages'
 end
+
+HighVoltage.configure do |c|
+  c.routes = false
+end
